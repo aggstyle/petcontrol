@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h3 class="modal-title">Cadastrando um novo Usuario</h3>
+</div>
+<div class="modal-body jumbotron">
+
+  <table class="">
+    <tr>
+      <th>Login </th>
+      <th>
+        <input id="nome" type="text" data-ng-model="vm.usuario.login" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>senha </th>
+      <th>
+        <input id="nome" type="password" data-ng-model="vm.usuario.senha" class="form-control"></input>
+      </th>
+    </tr>
+     <tr>
+       <th>Pessoa</th>
+         <th>
+           <input id="nome" type="text" data-ng-model="vm.usuario.pessoa" uib-typeahead="pessoa as pessoa.nome for pessoa in vm.animais | filter:$viewValue | limitTo:8" class="form-control">
+          </th>
+     </tr>
+  </table>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="vm.salvar()">Salvar e fechar</button>
+  <button class="btn btn-primary" type="button" ng-click="vm.salvar(true)">Salvar e continuar</button>
+  <button class="btn btn-warning" type="button" ng-click="vm.fechar()">fechar</button>
+</div>

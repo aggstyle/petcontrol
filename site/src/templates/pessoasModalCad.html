@@ -1,0 +1,134 @@
+<div class="modal-header">
+  <h3 class="modal-title">Cadastrando uma nova pessoa</h3>
+</div>
+<div class="modal-body jumbotron">
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>
+        <input id="nome" type="text" data-ng-model="vm.pessoa.nome" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>CPF/CNPJ</th>
+      <th>
+        <input id="cpfCnpj" type="text" data-ng-model="vm.pessoa.cpfCnpj" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>RG</th>
+      <th>
+        <input id="rg" type="text" data-ng-model="vm.pessoa.rg" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>Endereço</th>
+      <th>
+        <input id="endereco" type="text" data-ng-model="vm.pessoa.endereco" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>Número</th>
+      <th>
+        <input id="numero" type="text" data-ng-model="vm.pessoa.numero" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>Bairro</th>
+      <th>
+        <input id="bairro" type="text" data-ng-model="vm.pessoa.bairro" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>CEP</th>
+      <th>
+        <input id="cep" type="text" data-ng-model="vm.pessoa.cep" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>Sexo</th>
+      <th>
+        <select data-ng-model="vm.pessoa.sexo" class="form-control">
+          <option value="N">Não informado</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <th>Cidade</th>
+      <th>
+        <select data-ng-model="vm.pessoa.cidade" class="form-control">
+          <option value="N">Não informado</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <th>Data de nascimento</th>
+      <th>
+        <input id="dtNascimento" type="date" name="input" data-ng-model="vm.animal.dtNascimento" class="form-control"></input>
+      </th>
+    </tr>
+
+    <tr>
+      <th>Observação</th>
+      <th>
+        <textarea id="nome" type="text" data-ng-model="vm.animal.observacao" class="form-control"></textarea>
+      </th>
+    </tr>
+    <tr>
+      <th>Maturidade</th>
+      <th>
+        <select data-ng-model="vm.animal.maturidade" class="form-control">
+          <option value="0">Filhote</option>
+          <option value="1">Adulto</option>
+          <option value="2">Idoso</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <th>Ong</th>
+      <th>
+        <input id="nome" type="text" data-ng-model="vm.animal.ong" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>Castrado</th>
+      <th>
+        <select data-ng-model="vm.animal.maturidade" class="form-control">
+          <option value="true">Sim</option>
+          <option value="false">Não</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <th>Pai</th>
+      <th>
+        <input id="nome" type="text" data-ng-model="vm.animal.pai" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>Mãe</th>
+      <th>
+        <input id="nome" type="text" data-ng-model="vm.animal.mae" class="form-control"></input>
+      </th>
+    </tr>
+    <tr>
+      <th>Dono</th>
+      <th>
+        <input id="nome" type="text" data-ng-model="vm.animal.dono" class="form-control"></input>
+      </th>
+    </tr>
+
+  </table>
+  {{vm.animal}}
+</div>
+
+
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="vm.salvar()">Salvar e fechar</button>
+  <button class="btn btn-primary" type="button" ng-click="vm.salvar(true)">Salvar e continuar</button>
+  <button class="btn btn-warning" type="button" ng-click="vm.fechar()">fechar</button>
+</div>

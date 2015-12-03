@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" ng-app="petcontrol">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PetControl</title>
+  <!-- STYLES -->
+  <link rel="stylesheet" href="lib/css/main.min.css" />
+  <!-- SCRIPTS -->
+  <script src="lib/js/main.min.js"></script>
+  <!-- Custom Scripts -->
+  <script type="text/javascript" src="js/dashboard.min.js"></script>
+  </style>
+</head>
+
+<body ng-app="petcontrol">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <h2>Pet<small>Control</small></h2>
+    </div>
+    <form class="navbar-form navbar-right">
+      <div class="form-group">
+        <input type="text" placeholder="Login" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Senha" class="form-control">
+      </div>
+      <a href="index.html" class="btn btn-success" type="button">Entrar</a>
+      <!--<button type="submit" class="btn btn-success" ng-click="$location.path('/index.html')" >Entrar </button>-->
+      <div class="form-group" style="width:10px;">
+      </div>
+    </form>
+    </div>
+
+  </nav>
+  </div>
+  </nav>
+
+  <div class="jumbotron">
+    <div class="container">
+
+
+
+      <!-- Page Content -->
+      <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+          <div class="col-md-8">
+            <img class="img-responsive img-rounded" src="img/bannerinial.jpg" alt="">
+          </div>
+          <!-- /.col-md-8 -->
+          <div class="col-md-4">
+            <h2>Busca</h2>
+            <p>No campo abaixo e possivel consultar um animal por sua tag RFID ou pelo numero na coleira, para verificar quem
+              é seu dono
+            </p>
+            <form ng-controller="InicialCtrl as vm">
+              <div class="form-group">
+                <input type="text" placeholder="RFID/Coleira" ng-model="vm.rfid" class="form-control">
+              </div>
+              <div class="form-group" a>
+                <button type="submit" class="btn btn-success" ng-click="vm.openModal()">Consultar</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.col-md-4 -->
+        </div>
+        <!-- Call to Action Well -->
+          <div class="col-lg-12">
+            <div class="well text-center">
+             Segue a baixo uma lista de ongs nas quais voce pode consultar animais disponiveis para adoção
+            </div>       
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+  <div class="container">
+ 
+    <div class="row" ng-controller="InicialCtrl as vm">
+      <div class="col-lg-15">
+        <table ng-table="vm.tableAnimais" class="table" show-filter="true">
+          <tr ng-repeat="animal in $data">
+            <td title="'Nome'" filter="{nome:'text'}" sortable="'nome'">
+              {{animal.nome}}
+            </td>
+            <td title="'Nome Ong'" filter="{ 'ong.nome': 'select'}" sortable="'ong'" filter-data="vm.ongs">
+              {{animal.ong.nome}}
+            </td>
+            <td title="'Espécie'" filter="{ 'especie.descricao': 'select'}" sortable="'especie'" filter-data="vm.especies">
+              {{animal.especie.descricao}}
+            </td>
+            <td title="'Data Nascinemnt'" filter="{ dtNascimento: 'text'}" sortable="'dtNascimento'">
+              {{animal.dtNascimento | date}}
+            </td>
+
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+  <footer>
+  <div class="row">
+      <div class="col-lg-12">
+      <p>Copyright &copy; PetControl 2015</p>
+       </div>
+          
+    </footer>
+  </div>
+
+
+</body>
+
+</html>

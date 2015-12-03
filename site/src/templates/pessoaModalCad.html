@@ -1,0 +1,114 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{vm.tituloPage()}}</h3>
+</div>
+
+<div class="modal-body jumbotron">
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <th>
+                <input id="nome" type="text" data-ng-model="vm.pessoa.nome" class="form-control"></input>
+            </th>
+        </tr>
+        <tr>
+            <th>Sexo</th>
+            <th>
+                <select data-ng-model="vm.pessoa.sexo" class="form-control">
+                    <option value="N_INFORMADO">Não informado</option>
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="FEMININO">Feminino</option>
+                </select>
+            </th>
+        </tr>
+
+        <tr>
+            <th>Tipo Pessoa</th>
+            <th>
+                <select data-ng-model="vm.pessoa.tipoPessoa" class="form-control">
+                    <option value="FISICA">fisca</option>
+                    <option value="JURIDICA">juridica</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
+            <th>Cpf/Cnpj</th>
+            <th>
+                <input id="cpf" type="text" data-ng-model="vm.pessoa.cpf" class="form-control"></input>
+            </th>
+        </tr>
+        <tr>
+            <th>RG</th>
+            <th>
+                <input id="rg" type="text" data-ng-model="vm.pessoa.rg" class="form-control"></input>
+            </th>
+        </tr>
+        <tr>
+            <th>Endereco</th>
+            <th>
+                <input id="Endereco" type="text" data-ng-model="vm.pessoa.endereco" class="form-control"></input>
+            </th>
+        </tr>
+        <tr>
+            <th>Numero</th>
+            <th>
+                <input id="numero" type="text" data-ng-model="vm.pessoa.numero" class="form-control"></input>
+            </th>
+        </tr>
+        <tr>
+            <th>Bairro</th>
+            <th>
+                <input id="bairro" type="text" data-ng-model="vm.pessoa.bairro" class="form-control"></input>
+            </th>
+        </tr>
+        <tr>
+            <th>CEP</th>
+            <th>
+                <input id="cep" type="text" data-ng-model="vm.pessoa.cep" class="form-control"></input>
+            </th>
+        </tr>
+        <tr>
+            <th>Cidade</th>
+            <th>
+                <input type="text" data-ng-model="vm.pessoa.cidade" uib-typeahead="cidade as cidade.nome for cidade in vm.cidadeSelect | filter:$viewValue | limitTo:8"
+                class="form-control">
+            </th>
+        </tr>
+
+
+        <tr>
+            <th>Telefone</th>
+            <th>
+                <input id="telefone" type="text" data-ng-model="vm.pessoa.telefone" class="form-control"></input>
+            </th>
+        </tr>
+
+
+        <tr>
+            <th>Celular</th>
+            <th>
+                <input id="celular" type="text" data-ng-model="vm.pessoa.celular" class="form-control"></input>
+            </th>
+        </tr>
+
+        <tr>
+            <th>Email</th>
+            <th>
+                <input id="email" type="email" data-ng-model="vm.pessoa.email" class="form-control"></input>
+            </th>
+        </tr>
+
+        <tr>
+            <th>Observação</th>
+            <th>
+                <input id="observacao" type="email" data-ng-model="vm.pessoa.observacao" class="form-control"></input>
+            </th>
+        </tr>
+    </table>
+</div>
+
+
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.salvar()">Salvar e fechar</button>
+    <button class="btn btn-primary" type="button" ng-click="vm.salvar(true)">Salvar e continuar</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.fechar()">fechar</button>
+</div>

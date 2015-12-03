@@ -1,0 +1,24 @@
+<div class="row" ng-controller="UsuarioCtrl as vm">
+
+  <div class="col-lg-12">
+    <button type="button" class="btn btn-primary" ng-click="vm.openModal()">
+      <i class="glyphicon glyphicon-plus" > </i>
+      <span>Cadastrar uma usuario</span>
+    </button>
+    <br></br>
+    <table ng-table="vm.tableUsuario" class="table" show-filter="true">
+      <tr ng-repeat="usuario in $data">
+        <td title="'Nome'" filter="{nome:'text'}" sortable="'nome'">
+          {{usuario.login}}
+        </td>
+        <td title="'Cidade'" filter="{ cidade: 'text'}" sortable="'cidade'">
+          {{usuario.pessoa.nome}}
+        </td>
+        <td title="'Bairro'" filter="{ bairro: 'text'}" sortable="'bairro'">
+          {{usuario.ong.nome}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
